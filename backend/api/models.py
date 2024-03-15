@@ -14,7 +14,7 @@ class Event(models.Model):
     data= models.CharField(max_length=200,null=False,blank=False)
     time= models.DateTimeField(auto_now=True)
     location= models.CharField(max_length=200,null=False,blank=False)
-    is_liked=models.BooleanField(null=False,blank=False)
+    is_liked=models.BooleanField(null=False,blank=False,default=False)
     user=models.ForeignKey(User,on_delete=models.CASCADE),
     image=models.ImageField(upload_to='img',blank=False,null=False)
 
