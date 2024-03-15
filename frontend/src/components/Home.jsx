@@ -1,7 +1,20 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import Card from './Card'
 
 function Home() {
+
+  const [events, setEvents] = useState([])
+
+  const getEvents = async () => {
+    const response = await axios.get('http://localhost:8000/api/all-event/')
+    console.log(response.data)
+  }
+
+  useEffect(() => {
+    getEvents()
+  }, [])
+
   return (
     <div className='bg-slate-200 rounded-lg'>
       <div className='text-3xl font-bold text-gray-500 underline decoration-orange-400 pl-10 pt-4'>All Events</div>

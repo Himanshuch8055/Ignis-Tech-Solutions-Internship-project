@@ -1,24 +1,50 @@
 from django.db import models
+from django.contrib.auth.base_user import BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 
-
-class User(models.Model):
-    name= models.CharField(max_length=200,null=False,blank=False)
-    password= models.CharField(max_length=200,null=False,blank=False)
-
-    def __str__(self):
-        return self.name
-    
 # Create your models here.
+
 class Event(models.Model):
     name= models.CharField(max_length=200,null=False,blank=False)
     data= models.CharField(max_length=200,null=False,blank=False)
     time= models.DateTimeField(auto_now=True)
     location= models.CharField(max_length=200,null=False,blank=False)
     is_liked=models.BooleanField(null=False,blank=False,default=False)
-    user=models.ForeignKey(User,on_delete=models.CASCADE),
     image=models.ImageField(upload_to='img',blank=False,null=False)
 
     def __str__(self):
         return self.name
     
+
+class AppUserManager(BaseUserManager):
+	def create_user(self, email, password=None): # password=None
+		if not email:
+			raise ValueError('An email is required.')
+		if not password:
+			raise ValueError('A password is required.')
+		email = self.normalize_email(email)
+		user = self.model(email=email)
+		user.set_password(password)
+		user.save()
+		return user
+	def create_superuser(self, email, password=None): # password=None
+		if not email:
+			raise ValueError('An email is required.')
+		if not password:
+			raise ValueError('A password is required.')
+		user = self.create_user(email, password)
+		user.is_superuser = True
+		user.save()
+		return user
+
+
+class AppUser(AbstractBaseUser, PermissionsMixin):
+	user_id = models.AutoField(primary_key=True)
+	email = models.EmailField(max_length=50, unique=True,null=False)
+	username = models.CharField(max_length=50)
+	USERNAME_FIELD = 'email'
+	REQUIRED_FIELDS = ['username']
+	objects = AppUserManager()
+	def _str_(self):
+		return self.username
 
