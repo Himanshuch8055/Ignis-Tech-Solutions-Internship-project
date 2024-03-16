@@ -10,8 +10,9 @@ import {
 import './index.css'
 import Footer from './components/Footer.jsx';
 import Home from './components/Home.jsx';
-import Favorites from './components/Favorites.jsx';
 import Auth from './components/Auth.jsx';
+import Likes from './components/Likes.jsx';
+import CreateEvents from './components/CreateEvents.jsx';
 
 // const router = createBrowserRouter([
 //     {
@@ -33,6 +34,8 @@ const router = createBrowserRouter(
     <Route path='/' element={<App/>}>
       <Route path='' element={<Home/>}/>
       <Route path='/auth' element={<Auth/>}/>
+      <Route path='/likes' element={<Likes/>}/>
+      <Route path='/create-events' element={<CreateEvents/>}/>
     </Route>
   )
 )

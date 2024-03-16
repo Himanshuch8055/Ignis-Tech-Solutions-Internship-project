@@ -7,15 +7,15 @@ import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, Switch, Router } from 'react-router-dom'
 import App from './App.jsx'
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<App />}>
-      <Route path='' element={<Home/>}/>
-      <Route path='Favorites' element={<Favorites />}/>
-      <Route path='Auth' element={<Auth />}/>
-    </Route>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<App />}>
+        <Route path='' element={<Home/>}/>
+        <Route path='Favorites' element={<Favorites />}/>
+        <Route path='Auth' element={<Auth />}/>
+      </Route>
+    )
   )
-)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

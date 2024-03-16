@@ -1,16 +1,17 @@
 import React from 'react'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Card() {
     return (
         <>
-            <div className="w-[300px] rounded-md border bg-white shadow-lg hover:shadow-2xl cursor-pointer hover:shadow-orange-500/50 ">
+            <div className="w-[300px] rounded-md border bg-white shadow-lg hover:shadow-2xl hover:shadow-orange-500/50 ">
                 <img
                     src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
                     alt="Laptop"
                     className="h-[200px] w-full rounded-t-md object-cover"
                 />
                 <div className="p-4">
-                    <h1 className="inline-flex items-center text-lg font-semibold">
+                    <h1 className="inline-flex items-center text-lg font-semibold w-full relative">
                         About Macbook  {" "}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +28,7 @@ function Card() {
                             <line x1="7" y1="17" x2="17" y2="7"></line>
                             <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
+                        <i class="absolute top-0 right-0 cursor-pointer text-2xl hover:text-red-600 text-gray-700 fa-solid fa-heart"></i>
                     </h1>
                     <p className="mt-3 text-sm text-gray-600">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,

@@ -4,12 +4,12 @@ import { Link, NavLink } from 'react-router-dom'
 function Footer() {
     return (
         <>
-            <section className="relative overflow-hidden bg-white py-8">
+            <section className="relative overflow-hidden bg-white py-8 border-t-2 border-gray-200 mt-10">
                 <div className="container relative z-10 mx-auto px-4">
                     <div className="-m-8 flex flex-wrap items-center justify-between">
                         <div className="w-auto p-8">
                             <Link to="/" className="flex items-center">
-                                <span className="text-2xl font-bold text-orange-500">Eventbrite</span>
+                                <span className="text-2xl font-bold text-orange-600">Eventbrite</span>
                             </Link>
                         </div>
                         <div className="w-auto p-8">
