@@ -1,8 +1,12 @@
 import React from 'react'
+import Header from './Header'
+import Footer from './Footer'
 
 function Favorites() {
   return (
-    <div>Favorites</div>
+    <>
+        <h1>dsf</h1>
+    </>
   )
 }
 
