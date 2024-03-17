@@ -30,7 +30,7 @@ function FullCard() {
                                 <line x1="7" y1="17" x2="17" y2="7"></line>
                                 <polyline points="7 7 17 7 17 17"></polyline>
                             </svg>
-                            <i class="absolute top-0 right-0 cursor-pointer text-2xl hover:text-red-600 text-gray-700 fa-solid fa-heart"></i>
+                            <i class="absolute top-0 right-0 cursor-pointer text-2xl hover:text-red-600 text-red-700 fa-solid fa-heart"></i>
                         </h1>
                         <p class="mt-3 text-sm text-gray-600">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,

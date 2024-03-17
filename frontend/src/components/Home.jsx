@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from './Footer'
 import Header from './Header'
 import Card from './Card';
 import Banner from '../assets/Home-banner.webp'
+import axios from 'axios'
 
 function Home() {
+
+  useEffect(() => {
+    axios
+      .get('http://127.0.0.1:8000/api/user/')
+      .then((res) => {
+        console.log("res", res)
+      })
+  }, [])
+
   return (
     <>
       <img src={Banner} alt="example" />

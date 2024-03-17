@@ -113,44 +113,50 @@ function Auth() {
 
     return (
         <div>
-            <nav className="bg-gray-800 p-4 flex justify-between items-center">
-                <div className="text-white">Authentication App</div>
-                <button id="form_btn" onClick={update_form_btn} className="text-white">Register</button>
+            <nav className="bg-gray-100 p-4 flex justify-between items-center">
+                <div className="text-slate-700">Authentication App</div>
+                <button id="form_btn" onClick={update_form_btn} className="text-slate-700">Register</button>
             </nav>
             {
                 registrationToggle ? (
-                    <div className="flex justify-center items-center mt-5">
-                        <form onSubmit={e => submitRegistration(e)} className="w-full max-w-xs">
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email address</label>
-                                <input id="email" type="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                                <p className="text-gray-600 text-xs italic">We'll never share your email with anyone else.</p>
-                            </div>
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">Username</label>
-                                <input id="username" type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-                            <div className="mb-6">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
-                                <input id="password" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-                            <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-                        </form>
+                    <div className='flex flex-col justify-center items-center'>
+                        <h1 className='text-4xl font-bold mb-2 underline decoration-orange-400'>Register</h1>
+                        <div className="bg-gray-200 p-20 rounded-xl">
+                            <form onSubmit={e => submitRegistration(e)} className="w-full max-w-xs">
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email address</label>
+                                    <input id="email" type="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                    <p className="text-gray-600 text-xs italic">We'll never share your email with anyone else.</p>
+                                </div>
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">Username</label>
+                                    <input id="username" type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                </div>
+                                <div className="mb-6">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+                                    <input id="password" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                </div>
+                                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 ) : (
-                    <div className="flex justify-center items-center mt-5">
-                        <form onSubmit={e => submitLogin(e)} className="w-full max-w-xs">
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email address</label>
-                                <input id="email" type="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                                <p className="text-gray-600 text-xs italic">We'll never share your email with anyone else.</p>
-                            </div>
-                            <div className="mb-6">
-                                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
-                                <input id="password" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-                            <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-                        </form>
+                    <div className="flex flex-col justify-center items-center">
+                            <h1 className='text-4xl text-slate-800 underline decoration-orange-400 font-bold mb-2'>Login</h1>
+                        <div className='bg-gray-200 p-20 rounded-xl'>
+                            <form onSubmit={e => submitLogin(e)} className="w-full max-w-xs">
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email address</label>
+                                    <input id="email" type="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                    <p className="text-gray-600 text-xs italic">We'll never share your email with anyone else.</p>
+                                </div>
+                                <div className="mb-6">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+                                    <input id="password" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                </div>
+                                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 )
             }
