@@ -1,11 +1,13 @@
 import React from 'react'
 import Footer from './Footer'
 import Header from './Header'
-import Card from './Card'
+import Card from './Card';
+import Banner from '../assets/Home-banner.webp'
 
 function Home() {
   return (
     <>
+      <img src={Banner} alt="example" />
       <div className='text-5xl font-bold m-10 underline decoration-orange-300'>
         <h1>All Events</h1>
       </div>
